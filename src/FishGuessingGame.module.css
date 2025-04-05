@@ -1,0 +1,162 @@
+/* src/FishGuessingGame.module.css */
+
+/* CSS Variables */
+:root { /* Scoped to this module */
+  --color-primary: #1f77b4;
+  --color-secondary: #e0f7fa;
+  --color-background: #ffffff;
+  --color-text-light: #ffffff;
+  --color-text-dark: #333;
+  --color-text-primary: var(--color-primary);
+  --color-button-hover: #cceeff;
+  --color-restart: #28a745;
+  --color-restart-hover: #218838;
+  --color-correct-bg: #d4edda;
+  --color-correct-text: #155724;
+  --color-correct-border: #c3e6cb;
+  --color-incorrect-bg: #f8d7da;
+  --color-incorrect-text: #721c24;
+  --color-incorrect-border: #f5c6cb;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-secondary); /* Use variable */
+}
+
+.header {
+  background-color: var(--color-primary); /* Use variable */
+  color: var(--color-text-light); /* Use variable */
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  /* Reference external SVG file using root-relative path */
+  background-image: url('/src/assets/bubbles.svg'); 
+  background-color: var(--color-secondary); /* Use variable */
+}
+
+.fishImage {
+  width: 100%; 
+  height: 30vh; 
+  max-height: 250px; /* Added max-height */
+  object-fit: contain; 
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-background); /* Use variable */
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px; 
+  box-sizing: border-box; 
+}
+
+.optionButton {
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  font-size: 1.1em;
+  background-color: var(--color-background); /* Use variable */
+  color: var(--color-text-primary); /* Use variable */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.optionButton:last-child {
+  margin-bottom: 0;
+}
+
+.optionButton:hover {
+  background-color: var(--color-button-hover); /* Use variable */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer { 
+  background-color: var(--color-primary); /* Use variable */
+  color: var(--color-text-light); /* Use variable */
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); 
+  margin-top: auto; 
+}
+
+.scoreText {
+  margin: 0;
+}
+
+/* Feedback Styles */
+.feedbackContainer {
+  width: 100%; 
+  max-width: 350px; /* Match options container width for alignment */
+  padding: 0 20px; /* Match options container padding */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; 
+  align-items: stretch; /* Let feedback boxes take full width within padding */
+}
+
+.feedback {
+  margin-bottom: 8px; 
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  /* width: 100%; Removed - let container handle width */
+  /* max-width: 310px; Removed */
+  box-sizing: border-box;
+}
+
+.feedbackCorrect {
+  background-color: var(--color-correct-bg); /* Use variable */
+  color: var(--color-correct-text); /* Use variable */
+  border: 1px solid var(--color-correct-border); /* Use variable */
+}
+
+.feedbackIncorrect {
+  background-color: var(--color-incorrect-bg); /* Use variable */
+  color: var(--color-incorrect-text); /* Use variable */
+  border: 1px solid var(--color-incorrect-border); /* Use variable */
+}
+
+/* Game Over Styles */
+.gameOverContent {
+  justify-content: center; 
+  text-align: center;
+  padding: 40px 20px; 
+}
+
+.finalScore {
+  font-size: 1.2em;
+  margin: 20px 0;
+  color: var(--color-text-dark); /* Use variable */
+}
+
+.restartButton {
+  margin-top: 20px;
+  background-color: var(--color-restart); /* Use variable */
+  color: var(--color-text-light); /* Use variable */
+}
+
+.restartButton:hover {
+  background-color: var(--color-restart-hover); /* Use variable */
+} 
